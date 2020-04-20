@@ -13,11 +13,6 @@ Deconvolution of heterogeneous bulk tumor samples into distinct cell populations
 
 <h2>How to use?</h2>
 
----
-permalink: /PREDE.html
----
-
-
 ```R
 library("PREDE")
 ```
@@ -153,5 +148,5 @@ plot(bulk$H[5,],pred$H["2",],xlab = "True proportion",pch = 3,col="red",ylab = "
 ```
 
 
-![png](output_17_0.png)
+![png](output_17_0.png =20x20)
 

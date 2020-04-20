@@ -13,6 +13,11 @@ Deconvolution of heterogeneous bulk tumor samples into distinct cell populations
 
 <h2>How to use?</h2>
 
+---
+permalink: /PREDE.html
+---
+
+
 ```R
 library("PREDE")
 ```

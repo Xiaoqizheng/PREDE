@@ -148,5 +148,5 @@ plot(bulk$H[5,],pred$H["2",],xlab = "True proportion",pch = 3,col="red",ylab = "
 ```
 
 
-![png](output_17_0.png =20x20)
+![png](output_17_0.png)
 

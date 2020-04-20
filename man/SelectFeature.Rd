@@ -1,5 +1,5 @@
-\name{SelectFeature}
-\alias{SelectFeature}
+\name{select_feature}
+\alias{select_feature}
 \title{
 Select feature for profile matrix of mixed samples
 }
@@ -7,7 +7,7 @@ Select feature for profile matrix of mixed samples
 Select feature for profile matrix of mixed samples before applying PREDE model
 }
 \usage{
-SelectFeature(mat,method,nmarker, startn=0)
+select_feature(mat,method,nmarker, startn=0)
 }
 \arguments{
   \item{mat}{matrix of profiles of mixed samples. }
@@ -33,7 +33,7 @@ data(lung_exp)
 W <- lung_exp[,1:6]
 
 ## Partial-reference based deconvolution without total cell types W
-bulk <- GenerateMixSample(W,nSample =100,csd = 0.1)
-feat = SelectFeature(mat = bulk$Y,method = "cv",nmarker = 1000,startn = 0)
+bulk <- generate_bulk(W,nSample =100,csd = 0.1)
+feat = select_feature(mat = bulk$Y,method = "cv",nmarker = 1000,startn = 0)
 
 }

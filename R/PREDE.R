@@ -1,13 +1,12 @@
 #################################################################################
 # PREDEModel: Partial-reference based deconvolution model
 #################################################################################
-
 ## PREDE: partial reference-based deconvolution model
 ## Y: the profiles of tumor samples, they can be gene expression proflies,methylation profile, etc.
 ## W: the profiles of cell types
 ## W1: the profiles of partial reference cell lines
 ## type: "GE" for gene; "ME" for methylation
-## K: the number of cell types
+## K: the total number of cell types including both known and unknown cell types
 
 PREDE <- function(Y,W = NULL,W1,type = "GE",K,iters = 500,rssDiffStop=1e-10){
   if (is.null(W1)){
@@ -65,17 +64,17 @@ PREDE <- function(Y,W = NULL,W1,type = "GE",K,iters = 500,rssDiffStop=1e-10){
       H.pred = t(omega)
 
       # AIC
-      rss = norm(Y - W.pred %*% H.pred,type = "F")^2
-      nSamples = ncol(Y)*nrow(Y) ### sample size * number of CpG
-      nParam = K*(nrow(Y)+ncol(Y)) - nrow(W1)*ncol(W1) ### total number of parameters
-      aic = nSamples*log(rss/nSamples)+ 2*nParam + (2*nParam*(nParam+1))/(nSamples-nParam-1)
+      #rss = norm(Y - W.pred %*% H.pred,type = "F")^2
+      #nSamples = ncol(Y)*nrow(Y) ### sample size * number of CpG
+      #nParam = K*(nrow(Y)+ncol(Y)) - nrow(W1)*ncol(W1) ### total number of parameters
+      #aic = nSamples*log(rss/nSamples)+ 2*nParam + (2*nParam*(nParam+1))/(nSamples-nParam-1)
 
       if(is.null(W)){
-        out = list(W=W.pred, H = H.pred, aic = aic)
+        out = list(W=W.pred, H = H.pred)
       } else {
         # Adjust W.pred and H.pred using W
         out = adjustWH(W,W.pred,H.pred)
-        out$aic = aic
+        #out$aic = aic
       }
 
       return(out)
@@ -121,17 +120,17 @@ RF <- function(Y,W = NULL,K,type = "GE",iters = 500,rssDiffStop=1e-10){
   H.pred = t(omega)
 
   # AIC
-  rss = norm(Y - W.pred %*% H.pred,type = "F")^2
-  nSamples = ncol(Y)*nrow(Y) ### sample size * number of CpG
-  nParam = K*(nrow(Y)+ncol(Y)) ### total number of parameters
-  aic = nSamples*log(rss/nSamples)+ 2*nParam + (2*nParam*(nParam+1))/(nSamples-nParam-1)
+  #rss = norm(Y - W.pred %*% H.pred,type = "F")^2
+  #nSamples = ncol(Y)*nrow(Y) ### sample size * number of CpG
+  #nParam = K*(nrow(Y)+ncol(Y)) ### total number of parameters
+  #aic = nSamples*log(rss/nSamples)+ 2*nParam + (2*nParam*(nParam+1))/(nSamples-nParam-1)
 
   if(is.null(W)){
-    out = list(W=W.pred, H = H.pred, aic = aic)
+    out = list(W=W.pred, H = H.pred)
   } else {
     # Adjust W.pred and H.pred using W
     out = adjustWH(W,W.pred,H.pred)
-    out$aic = aic
+    #out$aic = aic
   }
   out
 }

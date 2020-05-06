@@ -1,6 +1,6 @@
 
-R version 3.6.1 (2019-07-05) -- "Action of the Toes"
-Copyright (C) 2019 The R Foundation for Statistical Computing
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
 Platform: x86_64-apple-darwin15.6.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -24,7 +24,6 @@ Type 'q()' to quit R.
 Loading required package: matrixStats
 Loading required package: quadprog
 Loading required package: gtools
-Warning: package ‘gtools’ was built under R version 3.6.2
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
@@ -2292,7 +2291,7 @@ CALU3_LUNG  0.1730464 0.164693034
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  87.209 9.43 96.953 0 0 
+Time elapsed:  85.129 9.409 94.668 0 0 
 > grDevices::dev.off()
 null device 
           1 

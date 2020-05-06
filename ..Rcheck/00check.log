@@ -1,5 +1,5 @@
 * using log directory ‘/Users/xiaoqi/Desktop/Rcode/PREDE/PREDE/..Rcheck’
-* using R version 3.6.1 (2019-07-05)
+* using R version 3.6.3 (2020-02-29)
 * using platform: x86_64-apple-darwin15.6.0 (64-bit)
 * using session charset: UTF-8
 * checking for file ‘./DESCRIPTION’ ... OK
@@ -11,7 +11,9 @@
 * checking if there is a namespace ... OK
 * checking for executable files ... WARNING
 Found the following executable files:
+  .git/objects/01/1babb70fbaa36fb2fefb74aae72eed7fdef309
   .git/objects/05/0d2691f6fb39728d5c368f1e37085ef6438a54
+  .git/objects/07/8ec9252793ae4eb28f3ffcfde0fa14a0622002
   .git/objects/07/cf8db7a43933d4a56ea73dbdeedb1e08e410eb
   .git/objects/08/849e4183e5c5f387029ff50c6116d5805a9781
   .git/objects/08/ccdf92c4bb840b051db70c30e349b2a2b873f8
@@ -21,12 +23,15 @@ Found the following executable files:
   .git/objects/0d/ad22c540d5768aada25d67f91370fdb333da98
   .git/objects/0f/e7db76bedf4ffbf0d4642124f4e892eedd2f77
   .git/objects/0f/f58a915fc8461716a0535245c42d684ad0a19a
+  .git/objects/12/3c6eabfd6ee6072aeb174527ce00ac776e60d3
   .git/objects/14/6b2954e2ada48a4438fd9dd1c66f97f7ccdbf9
   .git/objects/15/84d22bcdf9147dfffb50ab0f09a9e84d434d72
   .git/objects/17/eb9793edca642f79081906a9b4aa16621a6ef7
   .git/objects/19/5fa1095a8367a88679b8e35c6a3848076c23da
   .git/objects/1b/881259f044822b2bfee7602ff8316f391fb8f0
   .git/objects/1b/fcd9583bc85fbb7d9f072435ff4cbf91dd421b
+  .git/objects/1d/79355700497706ff035a7ac57491ccaca4af8c
+  .git/objects/22/ecf864cc3e766987cb20225c97131a7c4606e5
   .git/objects/26/a6f19eed71c2987eb9a6b1d04798b12b3c6b3a
   .git/objects/27/f3c6c6d7d54102bb50dcee24e06aeebdeca2e7
   .git/objects/28/0fdd9e203711a35497fff724de62730ac9896b
@@ -34,6 +39,7 @@ Found the following executable files:
   .git/objects/2a/a189ba30ea20a8b5704c151ace5d7d3b3624b1
   .git/objects/2c/4c2c277c3e3d66b61b9fdab7116ab7aedf95ed
   .git/objects/2e/a5e72bdcc2b7430bbb2e38e012481cef24ec45
+  .git/objects/34/8bf1a9ff42ff965b710e4f275a8f173aff937f
   .git/objects/34/e23aa2449ef655cfecf7901ca86bcebe8b8367
   .git/objects/35/b157374d7e580b87f19abe24bf16daa25056c2
   .git/objects/36/a80ef3f472488490f63fe0a3b454303cda54e6
@@ -47,6 +53,7 @@ Found the following executable files:
   .git/objects/46/2e24e3847c3e69ebbee69d9d5439a60e5f785e
   .git/objects/46/3b7fa8431868a5e545efde034a26fac9048cee
   .git/objects/46/f6ea7b0a56febde2d0863dcb6539dc9725ec08
+  .git/objects/4a/840f1b066f8c339b851d2de4e238619d9b367c
   .git/objects/4c/881e26dfb0f25a23ec3200c65c58f6c1241f97
   .git/objects/4d/d1e65cbd0f5fdc19f8fb1f1b5e5e1ae43479c4
   .git/objects/4e/03d6291bce1e21fa5499777d0a1daaa65e85fe
@@ -57,6 +64,7 @@ Found the following executable files:
   .git/objects/58/750608a1b1064a67fb9b92e6baaa9ba1a4b741
   .git/objects/5b/17566f450699bf2ec344287ecf1a1869b3e573
   .git/objects/61/a4af110d7591c92fad2cca46692fb5d9c49d21
+  .git/objects/63/18ec8a587b022a27093efef1af669e16429761
   .git/objects/65/abd8d0ea7243088698a92302b0caca751a8dc5
   .git/objects/66/afe38067df4c9ac97e3ea04a2b498cfe7a2430
   .git/objects/6a/23df6ba0913c9182e43609c19d4efcc01132dd
@@ -69,9 +77,11 @@ Found the following executable files:
   .git/objects/79/28b41333b538f01060227598fc84080f5eae8d
   .git/objects/79/5d184467dcf4ef3afd77c9d338fbcd3b6ffd6d
   .git/objects/7b/598f5da1f94cc0882d7f9ad473b22f1d176eb3
+  .git/objects/7b/711bd2a770e85933eefc5cf5d08e828124da76
   .git/objects/7b/d4f56c25fb73b31ffe2be237b1b2097f83a840
   .git/objects/7d/8c01317f46f1ec4c903be84fa2c2530f76b8bb
   .git/objects/7d/dd2ea9260cb2bfaf920ba6e591bb3cfefc86d5
+  .git/objects/7e/29319cc4e26c47d1ef2690252d66607d4301ce
   .git/objects/7f/55f050e934f16f468a2f1cc6325c04e4f616c2
   .git/objects/80/1e72b4c98ab463dfc941b976b3663230a0c4a4
   .git/objects/80/9baa9788e38d8ce796c2899b6eb8557918ce65
@@ -91,6 +101,7 @@ Found the following executable files:
   .git/objects/99/f1c16b9c628bf2f6b026f5a9b86cfd542f3a29
   .git/objects/9a/c4c317df8786a6a7c0ee04b9a88b2466077118
   .git/objects/9b/a6b5af260c13261835049a1a5e2efa32026c62
+  .git/objects/9f/9312fbe81c13d429c51e3ecc5ce83780e46c1a
   .git/objects/a1/6cfc09bd3e972c4af3f7ccc49af272265e0038
   .git/objects/a1/cd21cb1f713f3a0f4d109333e85f9faf1a6dae
   .git/objects/a8/ae3b517ca76e5a3cd2a11194ba648daec25587
@@ -103,6 +114,7 @@ Found the following executable files:
   .git/objects/b7/d8044f7c610512a427268eadc7bf8ee7080ab1
   .git/objects/b9/7146997e28394bef18774da85aac2806e11273
   .git/objects/bc/7799c5ca2f8ecf6df6d724e5278d07d537dfe9
+  .git/objects/c2/e39576e0b48c7062b71a6fd25aacf26ff1a847
   .git/objects/c6/1809ad0e0d9a9ce4bb4878d9e4daee05741bdd
   .git/objects/cc/52232422dfb3397d74f9d2df75b3970a6f7f1c
   .git/objects/cd/5919ae0c1eb7572af4a025ed9159659b16d211
@@ -124,6 +136,7 @@ Found the following executable files:
   .git/objects/ea/991eb01d2d9a1ab07ab57ef06ec55ab019ebdc
   .git/objects/eb/eec9af3754caa16a7cca9c8439038291d98014
   .git/objects/ec/2acccd3b6220b198e656a2bffba783546c9a2e
+  .git/objects/ed/a26cbe92d75bfcd0d0507adef31be305f3c226
   .git/objects/ef/549e57ed9cd52b87fb04cff2bf4e9bf7a22883
   .git/objects/f1/0f5ea669d3de9e84a2ce5bf5752546b99cd02d
   .git/objects/f2/a971203cfde0fe3858f08835afc7c9c10086db
@@ -145,10 +158,7 @@ These were most likely included in error. See section ‘Package
 structure’ in the ‘Writing R Extensions’ manual.
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking whether package ‘PREDE’ can be installed ... WARNING
-Found the following significant warnings:
-  Warning: package ‘gtools’ was built under R version 3.6.2
-See ‘/Users/xiaoqi/Desktop/Rcode/PREDE/PREDE/..Rcheck/00install.out’ for details.
+* checking whether package ‘PREDE’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking DESCRIPTION meta-information ... OK
@@ -202,4 +212,4 @@ Extensions’ manual.
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 5 WARNINGs, 2 NOTEs
+Status: 4 WARNINGs, 2 NOTEs

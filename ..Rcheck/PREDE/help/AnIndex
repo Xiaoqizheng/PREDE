@@ -1,0 +1,4 @@
+generate_bulk	GenerateMixSample
+GetCelltypeNum	GetCelltypeNum
+PREDE	PREDE
+select_feature	SelectFeature

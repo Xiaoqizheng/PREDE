@@ -1,0 +1,3 @@
+import(matrixStats,stats,utils,quadprog,gtools)
+export(generate_bulk,select_feature,PREDE,adjustWH,GetCelltypeNum)
+

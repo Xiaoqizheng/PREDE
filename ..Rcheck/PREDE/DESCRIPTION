@@ -1,0 +1,13 @@
+Package: PREDE
+Type: Package
+Title: Deconvolution of heterogeneous tumor samples using partial
+        reference signals
+Version: 1.2.0
+Author: Xiaoqi Zheng
+Maintainer: Xiaoqi Zheng<xqzheng@shnu.edu.cn>
+Depends: R (>= 3.5.0), matrixStats, stats, utils, quadprog, gtools
+Description: Characterizing the tumor heterogeneity, including the molecular profile of each cell population and its proportion in tumor tissues are very important. The present methods are roughly divided into two categories: reference-based methods and reference-free methods. However, in real clinical practices, the deconvolution problems are neither reference-based nor reference-free, but consist of a fraction of known cell types while leaving the rest cell types unknown. Therefore we proposed a partial-reference based deconvolution (PREDE) model based on Non-negative matrix factorization. We performed comprehensive evaluation of the proposed and ongoing deconvolution methods using simulated data and real TCGA tumor samples. We found that our PREDE model could effectively recover the true expression profile and absolute proportion of available and unknown cell types.
+License: GPL-2
+NeedsCompilation: no
+Packaged: 2020-04-19 15:16:48 UTC; Xiaoqi
+Built: R 3.6.1; ; 2020-05-06 04:02:20 UTC; unix

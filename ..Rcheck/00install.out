@@ -1,0 +1,16 @@
+* installing *source* package ‘PREDE’ ...
+** using staged installation
+** R
+** data
+** byte-compile and prepare package for lazy loading
+Warning message:
+package ‘gtools’ was built under R version 3.6.2 
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+Warning: package ‘gtools’ was built under R version 3.6.2
+** testing if installed package can be loaded from final location
+Warning: package ‘gtools’ was built under R version 3.6.2
+** testing if installed package keeps a record of temporary installation path
+* DONE (PREDE)

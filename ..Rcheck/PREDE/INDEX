@@ -1,0 +1,6 @@
+GetCelltypeNum          get optimal number of total cell types in the
+                        mixture tumor sample
+PREDE                   Partial-reference based deconvolution model
+generate_bulk           generate the mixture samples
+select_feature          Select feature for profile matrix of mixed
+                        samples

@@ -2,7 +2,7 @@ Package: PREDE
 Type: Package
 Title: Deconvolution of heterogeneous tumor samples using partial
         reference signals
-Version: 1.2.0
+Version: 1.2.1
 Author: Xiaoqi Zheng
 Maintainer: Xiaoqi Zheng<xqzheng@shnu.edu.cn>
 Depends: R (>= 3.5.0), matrixStats, stats, utils, quadprog, gtools

@@ -2292,7 +2292,7 @@ CALU3_LUNG  0.1730464 0.164693034
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  87.78 9.376 97.323 0 0 
+Time elapsed:  85.206 9.585 94.886 0 0 
 > grDevices::dev.off()
 null device 
           1 

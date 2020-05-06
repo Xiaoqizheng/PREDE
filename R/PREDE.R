@@ -9,11 +9,14 @@
 ## K: the total number of cell types including both known and unknown cell types
 
 PREDE <- function(Y,W = NULL,W1,type = "GE",K,iters = 500,rssDiffStop=1e-10){
-  if (is.null(W1)){
+    # Do a linear transformation of Y to fit the QPfunction function
+    m = max(Y)
+    Y = Y*100/m
+    if (is.null(W1)){
     ### ref-free
     print("This is ref-free case")
     out.RF = RF(Y,W = W, K = K,type = type)
-    W.pred = out.RF$W
+    W.pred = (out.RF$W)*m/100
     H.pred = out.RF$H
 
     if(is.null(W)){
@@ -25,10 +28,12 @@ PREDE <- function(Y,W = NULL,W1,type = "GE",K,iters = 500,rssDiffStop=1e-10){
     }
     return(out)
   } else {
+    W1=as.matrix(W1)
+    W1 = W1*100/m
     if (ncol(W1) == K){
       #### ref-based
       print("This is ref-based case")
-      return(RB(Y,W))
+      return(RB(Y,W1))
     } else if (ncol(W1) < K){
       ### partial ref
       mu02 <- RefFreeCellMixInitialize(Y,K=K-ncol(W1),method="ward.D2")
@@ -60,21 +65,14 @@ PREDE <- function(Y,W = NULL,W1,type = "GE",K,iters = 500,rssDiffStop=1e-10){
         mu0 = cbind(W1,mu1); rss0 = rss.new
       }
 
-      W.pred = mu
+      W.pred = mu*m/100
       H.pred = t(omega)
-
-      # AIC
-      #rss = norm(Y - W.pred %*% H.pred,type = "F")^2
-      #nSamples = ncol(Y)*nrow(Y) ### sample size * number of CpG
-      #nParam = K*(nrow(Y)+ncol(Y)) - nrow(W1)*ncol(W1) ### total number of parameters
-      #aic = nSamples*log(rss/nSamples)+ 2*nParam + (2*nParam*(nParam+1))/(nSamples-nParam-1)
 
       if(is.null(W)){
         out = list(W=W.pred, H = H.pred)
       } else {
         # Adjust W.pred and H.pred using W
         out = adjustWH(W,W.pred,H.pred)
-        #out$aic = aic
       }
 
       return(out)
@@ -86,7 +84,6 @@ PREDE <- function(Y,W = NULL,W1,type = "GE",K,iters = 500,rssDiffStop=1e-10){
 
 
 RB <- function(Y,W){
-  ## this function is the same for both GE and ME data
   H.pred = t(QPfunction(Y = Y, Xmat = W, sumLessThanOne=TRUE, nonNeg=!sumLessThanOne))
   return(list(H = H.pred))
 }
@@ -119,18 +116,11 @@ RF <- function(Y,W = NULL,K,type = "GE",iters = 500,rssDiffStop=1e-10){
   W.pred = mu
   H.pred = t(omega)
 
-  # AIC
-  #rss = norm(Y - W.pred %*% H.pred,type = "F")^2
-  #nSamples = ncol(Y)*nrow(Y) ### sample size * number of CpG
-  #nParam = K*(nrow(Y)+ncol(Y)) ### total number of parameters
-  #aic = nSamples*log(rss/nSamples)+ 2*nParam + (2*nParam*(nParam+1))/(nSamples-nParam-1)
-
   if(is.null(W)){
     out = list(W=W.pred, H = H.pred)
   } else {
     # Adjust W.pred and H.pred using W
     out = adjustWH(W,W.pred,H.pred)
-    #out$aic = aic
   }
   out
 }

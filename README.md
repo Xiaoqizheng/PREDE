@@ -3,15 +3,40 @@
 
    Deconvolution of heterogeneous bulk tumor samples into distinct cell populations is an important yet challenging problem, particularly when only partial references are available. Here we developed PREDE, a partial reference deconvolution method based on iterative non-negative Matrix Factorization.
 
-<h2>How to install?</h2>
-1. Install the devtools package if needed.
-<p><code>install.packages("devtools")</code> </p>
-2. Load the devtools package.
-<p><code>library(devtools)</code> </p>
-3. Install PREDE from GitHub. 
-<p><code>install_github("Xiaoqizheng/PREDE")</code> 
 
-<h2>How to use?</h2>
+```R
+set.seed(123)
+```
+
+## How to install?
+### 1. Install the devtools package if needed
+
+
+```R
+install.packages("devtools")
+```
+
+### 2. Load the devtools package
+
+
+```R
+library(devtools)
+```
+
+### 3. Install PREDE from GitHub
+
+
+```R
+install_github("Xiaoqizheng/PREDE")
+```
+
+    Skipping install of 'PREDE' from a github remote, the SHA1 (6d0083c8) has not changed since last install.
+      Use `force = TRUE` to force installation
+    
+
+
+## How to use?
+
 
 ```R
 library("PREDE")
@@ -60,6 +85,20 @@ feat <- select_feature(mat = bulk$Y,method = "cv",nmarker = 1000,startn = 0)
 ```
 
 
+```R
+head(feat)
+```
+
+
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'FDCSP'</li><li>'KRT23'</li><li>'CXCL5'</li><li>'GAGE3'</li><li>'KRT6A'</li><li>'BCHE'</li></ol>
+
+
+
 ### 3. Get optimal number of total cell types
 
 
@@ -76,7 +115,7 @@ abline(v = 6,lwd = 2,lty = 2,col = "gray")
 ```
 
 
-![png](output_11_0.png)
+![png](output_19_0.png)
 
 
 
@@ -110,29 +149,35 @@ cor(W[feat,],pred$W)
 	<tr><th></th><th scope=col>A549_LUNG</th><th scope=col>CAL12T_LUNG</th><th scope=col>CALU1_LUNG</th><th scope=col>CALU3_LUNG</th><th scope=col>1</th><th scope=col>2</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>A549_LUNG</th><td>1.0000000</td><td>0.4825898</td><td>0.5051475</td><td>0.3980509</td><td>0.5051503</td><td>0.4728361</td></tr>
-	<tr><th scope=row>CAL12T_LUNG</th><td>0.4825898</td><td>1.0000000</td><td>0.4397227</td><td>0.4177839</td><td>0.4113773</td><td>0.4300118</td></tr>
-	<tr><th scope=row>CALU1_LUNG</th><td>0.5051475</td><td>0.4397227</td><td>1.0000000</td><td>0.3316008</td><td>0.4598158</td><td>0.4616742</td></tr>
-	<tr><th scope=row>CALU3_LUNG</th><td>0.3980509</td><td>0.4177839</td><td>0.3316008</td><td>1.0000000</td><td>0.4546228</td><td>0.3661860</td></tr>
-	<tr><th scope=row>CALU6_LUNG</th><td>0.4629813</td><td>0.3679146</td><td>0.4711973</td><td>0.3211006</td><td>0.3435376</td><td>0.9795787</td></tr>
-	<tr><th scope=row>CORL105_LUNG</th><td>0.4713901</td><td>0.4310114</td><td>0.4459747</td><td>0.4662530</td><td>0.9827597</td><td>0.3207378</td></tr>
+	<tr><th scope=row>A549_LUNG</th><td>1.0000000</td><td>0.4625315</td><td>0.4924260</td><td>0.3684912</td><td>0.4237252</td><td>0.4009461</td></tr>
+	<tr><th scope=row>CAL12T_LUNG</th><td>0.4625315</td><td>1.0000000</td><td>0.4099629</td><td>0.3858953</td><td>0.3514726</td><td>0.3124635</td></tr>
+	<tr><th scope=row>CALU1_LUNG</th><td>0.4924260</td><td>0.4099629</td><td>1.0000000</td><td>0.2884619</td><td>0.4860875</td><td>0.3620164</td></tr>
+	<tr><th scope=row>CALU3_LUNG</th><td>0.3684912</td><td>0.3858953</td><td>0.2884619</td><td>1.0000000</td><td>0.2865035</td><td>0.4166320</td></tr>
+	<tr><th scope=row>CALU6_LUNG</th><td>0.4084549</td><td>0.3077822</td><td>0.4297451</td><td>0.2704010</td><td>0.9777979</td><td>0.2454628</td></tr>
+	<tr><th scope=row>CORL105_LUNG</th><td>0.4334871</td><td>0.3814735</td><td>0.4406733</td><td>0.4322341</td><td>0.3437657</td><td>0.9721933</td></tr>
 </tbody>
 </table>
 
 
 
- The first four columns are four input known cell types. The last two columns are the predicted new cell types 1 and 2, which should be corresponding to 'CORL105_LUNG' and 'CALU6_LUNG' respectively. 
+ The first four columns are four input known cell types. The last two columns are the predicted new cell types 1 and 2, which should be corresponding to cell lines 'CALU6_LUNG' and 'CORL105_LUNG' respectively. 
 
 
 ```R
-## plot the results
+## plot the accuracies for profile and proportion estimation
 par(mar = c(3.5, 3, 1.6, 1.1), mgp = c(1.9, 0.5, 0),mfrow = c(2,2))
-plot(W[feat,'CORL105_LUNG'],pred$W[,"1"],xlab = "True expression profile",pch = 19,col="#00000050",ylab = "Predicted expression profile",main = "CORL105")
-plot(bulk$H[6,],pred$H["1",],xlab = "True proportion",pch = 3,col="red",ylab = "Predicted proportion",main = "CORL105")
-plot(W[feat,'CALU6_LUNG'],pred$W[,"2"],xlab = "True expression profile",pch = 19,col="#00000050",ylab = "Predicted expression profile",main = "CALU6")
-plot(bulk$H[5,],pred$H["2",],xlab = "True proportion",pch = 3,col="red",ylab = "Predicted proportion",main = "CALU6")
+plot(W[feat,'CALU6_LUNG'],pred$W[,"1"],xlab = "True expression profile",pch = 19,col="#00000050",ylab = "Predicted expression profile",main = "CALU6")
+plot(bulk$H[5,],pred$H["1",],xlab = "True proportion",pch = 3,col="red",ylab = "Predicted proportion",main = "CALU6")
+plot(W[feat,'CORL105_LUNG'],pred$W[,"2"],xlab = "True expression profile",pch = 19,col="#00000050",ylab = "Predicted expression profile",main = "CORL105")
+plot(bulk$H[6,],pred$H["2",],xlab = "True proportion",pch = 3,col="red",ylab = "Predicted proportion",main = "CORL105")
+
 ```
 
 
-![png](output_17_0.png)
+![png](output_25_0.png)
 
+
+
+```R
+
+```
